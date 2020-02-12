@@ -13,14 +13,13 @@ stdin.on('data', (key) => {
   process.stdout.write("\x07"); 
   
 } else {
-const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-for (let num of numbers) {
-if (key === num) {
+
+if (key > 0 && key < 10) {
   console.log(`setting timer for ${key} seconds`)
   setTimeout(() => {
         process.stdout.write("\x07");
       }, (key * 1000));
     }
   }
-}
 })
+
